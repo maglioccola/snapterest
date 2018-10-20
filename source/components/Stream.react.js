@@ -6,12 +6,12 @@ var Header = require('./Header.react');
 
 var Stream = createReactClass({
 
-	getInitialState: function () {
-		return {
-			tweet: null
-		};
+    getInitialState: function () {
+        return {
+            tweet: null
+        };
     },
-    
+
     componentDidMount: function () {
         SnapkiteStreamClient.initializeStream(this.handleNewTweet);
     },
@@ -20,16 +20,16 @@ var Stream = createReactClass({
         SnapkiteStreamClient.destroyStream();
     },
 
-    handleNewTweet: function(tweet) {
+    handleNewTweet: function (tweet) {
         this.setState({
             tweet: tweet
         });
     },
 
-    render: function() {
+    render: function () {
         var tweet = this.state.tweet;
 
-        if(tweet) {
+        if (tweet) {
             return (
                 <StreamTweet tweet={tweet} onAddTweetToCollection={this.props.onAddTweetToCollection} />
             );

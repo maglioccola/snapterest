@@ -11,7 +11,7 @@ var Application = createReactClass({
 		};
 	},
 
-	addTweetToCollection: function(tweet) {
+	addTweetToCollection: function (tweet) {
 		var collectionTweets = this.state.collectionTweets;
 		collectionTweets[tweet.id] = tweet;
 
@@ -20,7 +20,7 @@ var Application = createReactClass({
 		});
 	},
 
-	removeTweetFromCollection: function(tweet) {
+	removeTweetFromCollection: function (tweet) {
 		var collectionTweets = this.state.collectionTweets;
 		delete collectionTweets[tweet.id];
 
@@ -29,7 +29,7 @@ var Application = createReactClass({
 		});
 	},
 
-	removeAllTweetsFromCollection: function() {
+	removeAllTweetsFromCollection: function () {
 		this.setState({
 			collectionTweets: {}
 		});
